@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy
 
 const app = express();
 
@@ -14,7 +13,7 @@ require('./config/passport')(passport)
 
 // DB Config
 // const db = require('./config/keys').MongoURI
-const db = mongoose.connection
+// const db = mongoose.connection
 
 // Connect to Mongo
 mongoose.connect('mongodb://localhost/profile', { 
@@ -42,9 +41,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use('/dashboard', dashboard)
-app.use('/users', require('./routes/users'))
-
 // Connect flash
 app.use(flash())
 
@@ -61,4 +57,5 @@ app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
 const PORT = process.env.PORT || 5500;
+
 app.listen(PORT, console.log(`Server Started on port ${PORT}`));

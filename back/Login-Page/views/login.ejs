@@ -2,7 +2,7 @@
         <div class="col-md-4 m-auto">
           <div class="card card-body">
             <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
-            
+            <% include ./partials/messages %>
             <form action="/users/login" method="POST">
               <div class="form-group">
                 <label for="email">Email</label>
@@ -27,10 +27,10 @@
               <button type="submit" class="btn btn-outline-info btn-sm">Login</button>
             </form>
             <p class="lead mt-4">
-              No Account? <a href="/users/register">Register</a>
+              No Account? <a class="btn-outline-info" href="/users/register">Register</a>
             </p>
             <p>
-            <a href="/users/forgot">Reset Password</a>
+            <a class="btn-outline-info" href="/users/forgot">Reset Password</a>
             </p>
           </div>
         </div>
