@@ -6,7 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy
-
+const cors = require("cors")
 const app = express();
 
 // Passport config
@@ -43,7 +43,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // app.use('/dashboard', dashboard)
-app.use('/users', require('./routes/users'))
+app.use(cors('/users', require('./routes/users')))
 
 // Connect flash
 app.use(flash())
@@ -55,7 +55,9 @@ app.use((req, res, next) => {
     res.locals.error = req.flash('error')
     next()
 })
-
+app.get("/",()=>{
+    console.log("try to connect")
+})
 // Routes 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));

@@ -1,5 +1,5 @@
 const model = require('./models/db');
-const blogController = require('./controllers/blogController');
+const qusController = require('./controllers/qusController');
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
@@ -13,8 +13,8 @@ app.use(bodyparser.json());
 app.set('views', path.join(__dirname, '/views/'));
 app.engine('hbs', exphbs({ extname: 'hbs', defaultLayout: 'mainLayout', layoutsDir: __dirname + '/views/layouts/' }));
 app.set('view engine', 'hbs');
-app.listen(8080,()=>{
-    console.log('Express server started at port : 8080');
+app.listen(3000,()=>{
+    console.log('Express server started at port : 3000');
 });
 
-app.use('/blog',blogController);
+app.use('/qus',qusController);
