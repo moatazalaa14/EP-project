@@ -6,17 +6,19 @@ const async = require("async");
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
 
-// User model
-const User = require('../models/User')
+
+// Load User model
+const {User} = require('../models/User.js')
+const { forwardAuthenticated } = require('../config/auth');
 
 // Login Page
-router.get('/login', (req, res) => res.render('login'));
+router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 
 // Register Page
-router.get('/register', (req, res) => res.render('register'));
+router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 
 //Forgot Password Page
-router.get('/forgot', (req, res) => res.render('forgot'));
+router.get('/forgot', forwardAuthenticated, (req, res) => res.render('forgot'));
 
 // Register Handle
 router.post('/register', (req, res) => {
@@ -37,7 +39,6 @@ router.post('/register', (req, res) => {
     if(password.length < 6) {
         errors.push({ msg: 'Password should be at least 6 charcters'});
     }
-
 
     if(errors.length > 0){
         res.render('register', {
@@ -69,9 +70,9 @@ router.post('/register', (req, res) => {
                     })
 
                     // Hash Password
-                    bcrypt.genSalt(10, (err, salt) => 
+                    bcrypt.genSalt(10, (err, salt) => {
                         bcrypt.hash(newUser.password, salt, (err, hash) => {
-                            if(err) throw(err);
+                            if(err) throw err;
                             // Set password hashed
                             newUser.password = hash;
                             // Save user
@@ -81,7 +82,8 @@ router.post('/register', (req, res) => {
                                     res.redirect('/users/login')
                             })
                             .catch(err => console.log(err))
-                    }))   
+                        })
+                    })   
                 }
             });
     }
@@ -100,7 +102,7 @@ router.post('/login', (req, res, next) => {
 router.get('/logout', (req, res) => {
     req.logout()
     req.flash('success_msg', 'You are logged out')
-    res.redirect('/user/login')
+    res.redirect('/users/login')
 })
 
 // User Profile
@@ -108,9 +110,9 @@ router.get('/users/:id', (req, res) => {
     User.findById(req.params.id, (err, fonudUser) => {
         if(err) {
             req.flash("error", "Something went wrong.")
-            res.redirect('/')
+            return res.redirect('/')
         }
-        res.render('users/show', {user: foundUser})
+        res.render('/users/show', {user: foundUser})
     })
 })
 

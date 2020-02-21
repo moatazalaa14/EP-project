@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const _ = require('underscore') 
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
@@ -18,13 +17,15 @@ const UserSchema = new Schema({
     resetPasswordToken: String,
     resetPasswordExpires: Date,
     date: {
-        type: String,
-        required: Date.now
+        type: Date,
+        default: Date.now
     },
-})
+}, {
+    collection: 'User'
+});
 
-const User = module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 module.exports = {
     User
-}
+} 
