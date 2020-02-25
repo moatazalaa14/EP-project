@@ -37,7 +37,6 @@ export default class App extends Component {
         <Route exact path="/profile" component={ProfileFullPage} />
         <Route exact path="/logIn" component={LogIn} />
         <Route exact path="/signUp" component={SignUp} />
-        <Route exact path="/side" component={SideBarAll} />
 
         
       </BrowserRouter>

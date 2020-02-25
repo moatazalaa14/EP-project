@@ -1,9 +1,9 @@
 import React from "react";
 import "./header.css";
 
-const Header = () => {
-  return (
-    <div className="header">
+const HeaderCourse = () => {
+  return ( 
+    <div className="headercourse">
       <h1 className="heading">Courses</h1>
       <p className="headerTxt">
         In the history of modern astronomy, there is probably no one greater
@@ -17,4 +17,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderCourse;
