@@ -18,14 +18,17 @@ require('./config/passport')(passport)
 
 // DB Config
 // const db = require('./config/keys').MongoURI
-// const db = mongoose.connection
 
 // Connect to Mongo
-mongoose.connect('mongodb://localhost/profile', { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true })
-    .then(() => console.log('MongoDB Connected.. . '))
-    .catch(err => console.log(err));
+mongoose.connect('mongodb://localhost/profile', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log('MongoDB Connected.. . ')
+})
+    .catch(err => {
+        console.log(err)
+    });
 
 // ejs
 app.use(expressLayouts)
