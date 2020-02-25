@@ -27,22 +27,19 @@
   margin-right: 25px;
 } */
 
-.arrowBtns .fa-chevron-left{
+/*.arrowBtns .fa-chevron-left{
   margin-left:10% ;
   z-index: 5;
-}
-.arrowBtns .fa-chevron-right{
-  margin-left:85% ;
-
+}*/
+.arrowBtns {
+width: max-content;
+margin: 3% 92%;
 }
 .btn{
   margin-left: 45%;
 }
 @media (max-width: 870px) {
-  .left-btn {
-    margin: 14vh 3.5vw 0 78vw;
-  }
-   .arrowBtns {
-    margin: 16vh -0.5vw 0 78vw;
-  }
+.arrowBtns {
+  margin: 0 80%;
+}
 } 
