@@ -2,13 +2,15 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     name: {
         type: String,
         required: true
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
     passowrd: {
         type: String,
@@ -20,8 +22,6 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
-}, {
-    collection: 'User'
 });
 
 const User = mongoose.model('User', UserSchema);
