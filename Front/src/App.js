@@ -15,14 +15,15 @@ import AboutFullPage from "./components/aboutComponents/AboutFullPage";
 import ProfileFullPage from './components/ProfileComponents/ProfileFullPage';
 import LogIn from './components/LogInAndSignUp/LogIn';
 import SignUp from './components/LogInAndSignUp/SignUP';
+import SideBarAll from './components/sharedComponents/sideBar';
 export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
         {/*Home slider routes*/}
-        <Route exact path="/" component={HomeMainCard} />
+        <Route exact path="/" component={DoTest} />
         <Route exact path="/view/courses" component={HomeCourses} />
-        <Route exact path="/do-test" component={DoTest} />
+        <Route exact path="/join" component={HomeMainCard} />
 
         <Route exact path="/courses-page" component={CoursesPage} />
 
@@ -36,7 +37,9 @@ export default class App extends Component {
         <Route exact path="/profile" component={ProfileFullPage} />
         <Route exact path="/logIn" component={LogIn} />
         <Route exact path="/signUp" component={SignUp} />
+        <Route exact path="/side" component={SideBarAll} />
 
+        
       </BrowserRouter>
     );
   }

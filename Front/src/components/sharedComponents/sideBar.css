@@ -1,0 +1,28 @@
+.sidebarContent{
+position: fixed;
+width: 12%;
+height: 100vh;
+z-index: 0;
+}
+.sidebarContent .circleHome , .circleCourses , .circleBlogs , .circleQues{
+    width: 100px;
+    height: 100px;
+    margin: 50px 0px 40px 0px;
+    display: block;
+    background-color: #000742;
+    border-radius: 50%;
+    opacity: 40%;
+    transition: .5s ease-in-out;
+    box-shadow: 3px 3px 5px gray;
+}
+.sidebarContent .circleHome:hover ,.sidebarContent .circleCourses:hover ,.sidebarContent .circleBlogs:hover ,.sidebarContent .circleQues:hover{
+    opacity: 100%;
+    color: #f277d1;
+}
+.sidebarContent .circleHome p, .sidebarContent .circleCourses p ,.sidebarContent .circleBlogs p ,.sidebarContent .circleQues p{
+    margin:auto;
+    text-align: center;
+    padding-top: 30%;
+    opacity: 100%;
+    font-weight: bold;
+}

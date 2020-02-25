@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import HomeNavbar from "./HomeNavbar";
+import SideBarAll from './../sharedComponents/sideBar';
 export default class DoTest extends Component {
   render() {
     return (
@@ -9,13 +10,17 @@ export default class DoTest extends Component {
         <div className="home-component">
           <HomeNavbar />
           <div id="bg">
-            <h1 className="ques1">Do You Learn Programming ?</h1>
+            <SideBarAll />
+            <div className="svgDiv">
+              <h1>Do you learn Programming?</h1>
+            </div>
             <button className="test">Do Test</button>
             <Link to="/view/courses" className="back-left-btn">
               <i className="fas fa-chevron-left"></i>
             </Link>
+            
           </div>
-        </div>
+        </div>    
       </React.Fragment>
     );
   }

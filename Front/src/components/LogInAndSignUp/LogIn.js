@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import "./login.css";
 import axios from "axios";
+import SideBarAll from './../sharedComponents/sideBar';
 const LogIn = () => {
   axios.get("http://localhost:5500/users").then(res => {
     console.log(res.data);
   });
 
   return (
+      <>
+      <SideBarAll />
     <div className="app">
       <div className="container">
         <h1>Log In</h1>
@@ -33,6 +36,7 @@ const LogIn = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

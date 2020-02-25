@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import HomeCourseCard from "./HomeCourseCard";
-
 import { Link } from "react-router-dom";
 import "./HomeCourses.css";
 import HomeNavbar from "./HomeNavbar";
+import SideBarAll from './../sharedComponents/sideBar';
 export default class HomeCourses extends Component {
   state = {
     courses: [
@@ -21,6 +21,7 @@ export default class HomeCourses extends Component {
   render() {
     return (
       <React.Fragment>
+        <SideBarAll />
         <div className="home-component">
           <HomeNavbar />
 
@@ -43,7 +44,7 @@ export default class HomeCourses extends Component {
               <Link to="/">
                 <i className="fas fa-chevron-left"></i>
               </Link>
-              <Link to="/do-test">
+              <Link to="/join">
                 <i className="fas fa-chevron-right"></i>
               </Link>
             </div>
