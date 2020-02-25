@@ -1,12 +1,16 @@
 .card {
-    display: inline-block;
+  display: inline-block;
     max-width: 500px;
     white-space: normal;
-    margin: 0 30px;
+    margin: 0 30px ;
     padding: 15px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
   }
   .card a {
     text-decoration: none;
+  }
+
+  .btn{
+    margin-right: 50%;
   }

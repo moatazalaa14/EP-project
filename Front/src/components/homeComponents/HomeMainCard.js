@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
 import "./HomeMainCard.css";
 import HomeNavbar from "./HomeNavbar";
+import SideBarAll from './../sharedComponents/sideBar';
 export default class HomeMainCard extends Component {
   state = {
     welcomeText: "Lorem ipsum dolor sit amet, consectetur",
@@ -12,13 +12,16 @@ export default class HomeMainCard extends Component {
   render() {
     return (
       <React.Fragment>
+        <SideBarAll />
         <div className="home-component">
           <HomeNavbar />
 
           <article className="mainCard">
             <p> {this.state.welcomeText} </p>
             <Link to="/join-us">
+              
               <button className="btn"> {this.state.btnText} </button>
+              
             </Link>
           </article>
           <Link to="/view/courses" className="left-btn">

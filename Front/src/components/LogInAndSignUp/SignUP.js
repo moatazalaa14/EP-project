@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import "./signup.css";
+import SideBarAll from "../sharedComponents/sideBar";
 
 const SignUp = () => {
   return (
-      <div className="containerSignUp">
+     <>
+      <SideBarAll />
+     <div className="containerSignUp">
         <h1>Sign Up</h1>
 
         <form>
@@ -35,6 +38,7 @@ const SignUp = () => {
           </Link>
         </p>
       </div>
+      </>
   );
 };
 

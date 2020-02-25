@@ -5,7 +5,12 @@ const bodyParser = require("body-parser");
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+<<<<<<< HEAD
+const LocalStrategy = require('passport-local').Strategy
+const cors = require("cors")
+=======
 
+>>>>>>> 69e432813bfb837ff443b68001a991f15db6abee
 const app = express();
 
 // Passport config
@@ -41,6 +46,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+<<<<<<< HEAD
+// app.use('/dashboard', dashboard)
+app.use(cors('/users', require('./routes/users')))
+
+=======
+>>>>>>> 69e432813bfb837ff443b68001a991f15db6abee
 // Connect flash
 app.use(flash())
 
@@ -51,7 +62,9 @@ app.use((req, res, next) => {
     res.locals.error = req.flash('error')
     next()
 })
-
+app.get("/",()=>{
+    console.log("try to connect")
+})
 // Routes 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
