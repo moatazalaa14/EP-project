@@ -10,7 +10,7 @@ import BlogsFullPage from './components/blogsComponents/BlogsFullPage';
 import QuestionsFullPage from './components/questionsPageComponents/QuestionsFullPage';
 import Aboutus from "./components/aboutComponents/Aboutus";
 import Joinus from "./components/joinUsComponents/Joinus";
-import Contact from "./components/contactComponents/Contact";
+import Contact from "./components/contactForm/Contact";
 import AboutFullPage from "./components/aboutComponents/AboutFullPage";
 import ProfileFullPage from './components/ProfileComponents/ProfileFullPage';
 import LogIn from './components/LogInAndSignUp/LogIn';
@@ -18,6 +18,7 @@ import SignUp from './components/LogInAndSignUp/SignUP';
 import SideBarAll from './components/sharedComponents/sideBar';
 export default class App extends Component {
   render() {
+    
     return (
       <BrowserRouter>
         {/*Home slider routes*/}
@@ -38,7 +39,6 @@ export default class App extends Component {
         <Route exact path="/logIn" component={LogIn} />
         <Route exact path="/signUp" component={SignUp} />
 
-        
       </BrowserRouter>
     );
   }
